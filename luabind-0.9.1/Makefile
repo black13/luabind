@@ -1,5 +1,5 @@
 CC = g++
-FLAGS = -Wall -I ../LuaJIT-2.0.1/src -I ../boost-1.47.0 -I .
+FLAGS = -g -Wall -I ../LuaJIT-2.0.1/src -I ../boost-1.47.0 -I .
 
 OBJS = src/class.o\
 src/class_info.o\
@@ -24,5 +24,8 @@ VPATH = src/
 luabind.a: $(OBJS)
 	ar $(ARFLAGS) $@ $^
 
+clean:
+	del src\*.o src\*.a
+
 %.o : %.cpp
-	$(CC) $(INCLUDES) $(FLAGS) -c -o src/$@ $<
+	$(CC) $(INCLUDES) $(FLAGS) -c -o $@ $<
