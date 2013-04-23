@@ -25,4 +25,4 @@ luabind.a: $(OBJS)
 	ar $(ARFLAGS) $@ $^
 
 %.o : %.cpp
-	$(CC) $(INCLUDES) $(FLAGS) -c -o src/$@ $<
+	$(CC) $(INCLUDES) $(FLAGS) -c -o $@ $<

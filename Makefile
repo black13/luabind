@@ -4,7 +4,6 @@ BINDIR  = bin
 
 all: luajit luabind
 	echo "building test"
-	g++ -I ./boost-1.47.0 -I ./luabind-0.9.1 -I ./$(LUAJIT)/src main.cpp -o test.exe -lm ./$(BINDIR)/lua51.dll ./$(BINDIR)/luabind.a
 	
 luajit:
 	-mkdir $(BINDIR)
