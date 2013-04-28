@@ -18,11 +18,12 @@ clean:
 	rm -f $(OBJS) $(TARGET)
 
 luajit:
-	-mkdir $(BINDIR)
+	-mkdir .\$(BINDIR)
 	$(MAKE) -C ./$(LUAJIT)
-	copy .\$(LUAJIT)\src\lua51.dll $(BINDIR)
+	@cp .\$(LUAJIT)\src\lua51.dll .\$(BINDIR)
+	
 
 luabind:
 	-mkdir $(BINDIR)
 	$(MAKE) -C ./$(LUABIND)
-	copy .\$(LUABIND)\luabind.a $(BINDIR)
+	@cp .\$(LUABIND)\luabind.a $(BINDIR)
